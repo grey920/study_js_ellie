@@ -31,3 +31,14 @@ var age;
 
 name = 4;
 let name; // Cannot access 'name' before initialization
+
+
+// 3. Constants: 한 번 할당하면 값이 절대 바뀌지 않는 값
+// favor immutable data type always for a few reasons:(웬만하면 한 번 할당되면 다시는 변경되지 않는 값을 사용해라)
+//  - security
+//  - thread safety: 다양한 쓰레드들이 동시에 변수에 접근해서 값을 변경할 수 있기 때문
+//  - reduce human mistakes
+// 즉, js에서는 변수 선언시
+//  Mutable 타입은(변수) let, Immutable 타입은(상수) const 사용
+const daysInWeek = 7;
+const maxNumber = 5;
