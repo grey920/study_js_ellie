@@ -75,3 +75,29 @@ const greeting = 'hello ' + brendan;
 console.log(`value: ${greeting}, type: ${typeof greeting}`);
 const helloBob = `hi ${brendan}!`; // template literals (string) - 백틱과 $ 기호 사용
 console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
+
+// boolean
+// false: 0, null, undefined, NaN, ''
+// true: any other value
+const canRead = true;
+const test = 3 < 1;// false
+console.log(`value: ${canRead}, type: ${typeof canRead}`);
+console.log(`value: ${test}, type: ${typeof test}`);
+
+// null 
+let nothing = null; // null로 값이 명확하게 할당된 상태.
+console.log(console.log(`value: ${nothing}, type: ${typeof nothing}`));
+
+// undefined
+let x; // 선언만 되고 값은 지정되지 않은 상태
+console.log(`value: ${x}, type: ${typeof x}`);
+
+// symbol: create unique identifiers for objects
+//          고유한 식별자가 필요하거나 우선순위를 주고싶을 때
+const symbol1 = Symbol('id');
+const symbol2 = Symbol('id');//id라는 동일한 string이어도 다른 Symbol이다.
+console.log(symbol1 === symbol2); // false
+const gSymbol1 = Symbol.for('id');// string이 같을때 같은 Symbol을 만들고 싶다면 Symbol.for을 사용
+const gSymbol2 = Symbol.for('id');
+console.log(gSymbol1 === gSymbol2); // true
+console.log(`value: ${symbol1.description}, type: ${typeof symbol1}`);//.description으로 항상 string으로 변환해서 써야 한다
