@@ -101,3 +101,16 @@ const gSymbol1 = Symbol.for('id');// string이 같을때 같은 Symbol을 만들
 const gSymbol2 = Symbol.for('id');
 console.log(gSymbol1 === gSymbol2); // true
 console.log(`value: ${symbol1.description}, type: ${typeof symbol1}`);//.description으로 항상 string으로 변환해서 써야 한다
+
+// 5. Dynamic typing: dynamically typed language
+// js는 선언할때 타입을 정하지 않고, 런타임때(프로그램이 동작할 때) 할당된 값에 따라서 타입이 정해진다
+let text = 'hello';
+console.log(text.charAt(0));// h
+console.log(`value: ${text}, type: ${typeof text}`); // type: string
+text = 1;
+console.log(`value: ${text}, type: ${typeof text}`);// number
+text = '7' + 5;
+console.log(`value: ${text}, type: ${typeof text}`);// 75 string
+text = '8' / '2';
+console.log(`value: ${text}, type: ${typeof text}`);// 4 number
+console.log(text.charAt(0)); // text.charAt is not a function Error!!
