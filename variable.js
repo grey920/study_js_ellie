@@ -4,7 +4,7 @@
  'use strict';
  console.log(age);// undefined
 
-// 2. Variable (변수)
+// 2. Variable (변수), rw(read/write) - 메모리에 값을 읽고 쓰는 것이 가능하다.
 // let (added in ES6)
 
 // Block scope
@@ -33,16 +33,25 @@ name = 4;
 //let name; // Cannot access 'name' before initialization
 
 
-// 3.  : 한 번 할당하면 값이 절대 바뀌지 않는 값
-// favor immutable data type always for a few reasons:(웬만하면 한 번 할당되면 다시는 변경되지 않는 값을 사용해라)
-//  - security
-//  - thread safety: 다양한 쓰레드들이 동시에 변수에 접근해서 값을 변경할 수 있기 때문
-//  - reduce human mistakes
+// 3.  Constant: 한 번 할당하면 값이 절대 바뀌지 않는 값, r(read only) - 읽기만 가능하고 값을 변경시킬 수 없다.
+// 따라서, js에서는 값이 계속 바뀌어야 할 좋은 이유가 없다면 왠만해선 const로 작성하는 것이 좋은 습관이다.
 // 즉, js에서는 변수 선언시
 //  Mutable 타입은(변수) let, Immutable 타입은(상수) const 사용
 const daysInWeek = 7;
 const maxNumber = 5;
 
+// Note!
+// 변경이 불가능한 "Immutable data types": primitive types, frozen objects (i.e. object.freeze())
+// 변경이 가능한 "Mutable data types": all objects by default are mutable in JS
+// favor immutable data type always for a few reasons:(웬만하면 한 번 할당되면 다시는 변경되지 않는 값을 사용해라)
+//  - security
+//  - thread safety: 다양한 쓰레드들이 동시에 변수에 접근해서 값을 변경할 수 있기 때문
+//  - reduce human mistakes
+
+
+// primitive 타입인지 object 타입인지에 따라 메모리에 값이 다른 방식으로 저장된다.
+// primitive - 메모리에 값이 바로 저장
+// object - 너무 커서 메모리에 한번에 저장x, 실제 오브젝트를 가리키는 reference가 메모리에 저장된다.
 // 4. Variable types(primitive type / object type)
 // primitive, single item(더이상 나눠질 수 x): number, string, boolean, null, undefined, symbol
 // object, box container(primitive을 묶어서 한 박스로 관리)
